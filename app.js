@@ -7,7 +7,7 @@
 
 const express = require("express");
 const app = express();
-const port = 8080;
+const port = 5500;
 const { google } = require("googleapis");
 const request = require("request");
 const cors = require('cors');
@@ -150,7 +150,7 @@ app.get("/getURLTing", (req, res) => {
         "IMaCCvy4dTQ9ibguN-Rn5-Ou",
 
         //redirect to
-        "http://localhost:8080/steps"
+        "http://localhost:5500/steps"
 
     );
 
@@ -169,6 +169,7 @@ app.get("/getURLTing", (req, res) => {
         console.log("error ", err);
         console.log("statusCode: ", response && response.statusCode);
         res.send({ url });
+        //res.send(url)
     });
 });
 
@@ -184,13 +185,15 @@ app.get("/steps", async(req, res) => {
         "IMaCCvy4dTQ9ibguN-Rn5-Ou",
 
         //redirect to
-        "http://localhost:8080/steps"
+        "http://localhost:5500/steps"
 
     );
     const tokens = await oauth2Client.getToken(code);
 
     //console.log(tokens);
     res.send("Hello Fitness Junkie and welcome to your new fitness app!");
+    //res.send(url)
+    //res.send("https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffitness.activity.read%20profile%20email%20openid&state=%7B%7D&response_type=code&client_id=273042711119-0v7ad5ktlkdokpivuvn77a1dnjpbhd92.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A5500%2Fsteps")
     //console.log(code);
 
     let stepArray = [];
