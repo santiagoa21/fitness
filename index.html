@@ -2,41 +2,22 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Node delivered HTML
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="=ie-edge ">
+    <meta charset="UTF-8 ">
+    <meta http-equiv="refresh" content="3; url='https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffitness.activity.read%20profile%20email%20openid&state=%7B%7D&response_type=code&client_id=273042711119-0v7ad5ktlkdokpivuvn77a1dnjpbhd92.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A5500%2Fsteps"
+    />
+    <title>Cap Fitness</title>
 </head>
 
 <body>
     <div>
-        <h1>Send JSON to Node</h1>
-        <button onClick="sendJSON()">Send</button>
-        <p id="result">
+        <h1> &#129409; <b>THIS IS A SAMPLE HTML PAGE</b> &#129409;</h1>
+        <button onclick href="https://accounts.google.com/o/oauth2/v2/auth?access_type=offline&scope=https%3A%2F%2Fwww.googleapis.com%2Fauth%2Ffitness.activity.read%20profile%20email%20openid&state=%7B%7D&response_type=code&client_id=273042711119-0v7ad5ktlkdokpivuvn77a1dnjpbhd92.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A5500%2Fsteps ">Click Me</button>
+        <p id="result ">
         </p>
     </div>
-    <script>
-        var myData = [{
-            "dataSource": "Bill",
-            "startTime": 20,
-            "endTime": 20,
-            "dataType": "data",
-            "value": 325
-        }, {}]
-
-        function sendJSON() {
-
-            var xmlhttp = new XMLHttpRequest(); // new HttpRequest instance
-            xmlhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    document.getElementById("result").innerHTML =
-                        this.responseText;
-                }
-            };
-            xmlhttp.open("POST", "http://localhost:8080/steps");
-            xmlhttp.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-            xmlhttp.send(JSON.stringify(myData));
-
-        }
+    <script src="app.js ">
     </script>
 </body>
 
